@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Weather APP</title>
+</head>
+<body>
+    <section class="weather-container">
+        <div class="app">
+            <h1>Weather APP</h1>
+            <div class="form">
+                <form class="formul" action="" method="POST">
+                    <input class="holder" type="text" name="city" placeholder="Buscar Ciudad">
+                    <input class="buttom" type="submit" value="Buscar">
+                </form>
+            </div>
+        </div>
+        {% if city %}
+        <div class="city-container-full">
+            <div  class="city-container-search">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ city }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp }}</strong>° / <strong>{{ max_temp }}</strong>°</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="loop">
+                    <div>
+                        <p>Humedad: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ humidity }}</strong>%</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="loop">
+                    <div>
+                        <p>Presión: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ pressure }}</strong>.mb</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="loop">
+                    <div>
+                        <p>Visibilidad: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ visibility }}</strong> km</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="loop">
+                    <div>
+                        <p>Viento: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ wind }}</strong> km/h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+<!-- Grid -->
+        
+        <div class="cities-grid">
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ tokio }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_tokio }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_tokio }}</strong>° / <strong>{{ max_temp_tokio }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ seul }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_seul }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_seul }}</strong>° / <strong>{{ max_temp_seul }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ delhi }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_delhi }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_delhi }}</strong>° / <strong>{{ max_temp_delhi }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ bombai }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_bombai }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_bombai }}</strong>° / <strong>{{ max_temp_bombai }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ saopaulo }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_saopaulo }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_saopaulo }}</strong>° / <strong>{{ max_temp_saopaulo }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ mexicocity }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_mexicocity }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_mexicocity }}</strong>° / <strong>{{ max_temp_mexicocity }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ newyork }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_newyork }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_newyork }}</strong>° / <strong>{{ max_temp_newyork }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ jakarta }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_jakarta }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_jakarta }}</strong>° / <strong>{{ max_temp_jakarta }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city-grid">
+                <div class="weather-title">
+                    <p>El tiempo en <strong>{{ shangai }}</strong> hoy:</p>
+                </div>
+                <div class="weather-content">
+                    <div>
+                        <h3>Temperatura:</h3>
+                        <p class="temp-full"><strong>{{ temp_shangai }}</strong>°C</p>
+                    </div>
+                    <img class="clouds" src="../static/img/Clouds.png" alt="Imagen nubes">
+                </div>
+                <hr>
+                <div class="loop">
+                    <div class="tempestad">
+                        <p>Temperatura Mín./Max.: </p>
+                    </div>
+                    <div>
+                        <p><strong>{{ min_temp_shangai }}</strong>° / <strong>{{ max_temp_shangai }}</strong>°</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
